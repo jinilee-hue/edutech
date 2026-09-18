@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 에듀테크 코리아 페어 참관 보고서 | ATLAS본부</title>
+<style>
+:root{
+  --blue:#0066FF; --ink:#111418; --body:#3d4650; --muted:#8a939e;
+  --line:#e6e9ee; --bg:#ffffff; --soft:#f6f8fa;
+  --font:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);color:var(--body);background:var(--soft);
+  font-size:15px;line-height:1.68;-webkit-font-smoothing:antialiased}
+.page{max-width:1080px;margin:0 auto;background:var(--bg)}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── 표지 ───────────────────────────────── */
+.cover{padding:96px 64px 72px;border-bottom:1px solid var(--line)}
+.cover .eyebrow{font-size:12px;letter-spacing:.16em;color:var(--blue);font-weight:700;text-transform:uppercase}
+.cover h1{font-size:40px;line-height:1.25;color:var(--ink);font-weight:800;margin:18px 0 6px;letter-spacing:-.02em}
+.cover h2{font-size:20px;font-weight:500;color:var(--muted)}
+.cover .meta{margin-top:40px;display:flex;gap:40px;font-size:13px;color:var(--body)}
+.cover .meta b{display:block;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.08em;margin-bottom:4px}
+.rule{height:3px;width:56px;background:var(--blue);margin:28px 0 0}
+
+/* ── 섹션 ───────────────────────────────── */
+section{padding:56px 64px;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px}
+.sec-no{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.1em}
+.sec-head h3{font-size:25px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.sec-head .desc{font-size:13.5px;color:var(--muted);margin-left:auto}
+
+/* ── 개요 테이블 ─────────────────────────── */
+table.info{width:100%;border-collapse:collapse;font-size:16px}
+table.info th,table.info td{border-top:1px solid var(--line);padding:15px 4px;text-align:left;vertical-align:top}
+table.info th{width:130px;color:var(--ink);font-weight:600;white-space:nowrap}
+table.info tr:last-child td,table.info tr:last-child th{border-bottom:1px solid var(--line)}
+
+/* ── 부스 카드 ──────────────────────────── */
+.booth{border:1px solid var(--line);border-radius:10px;padding:30px 32px;margin-bottom:22px;break-inside:avoid}
+.booth-head{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-bottom:8px}
+.booth-head h4{font-size:21px;font-weight:700;color:var(--ink)}
+.tag{font-size:12.5px;font-weight:600;color:var(--blue);background:rgba(0,102,255,.08);
+  padding:4px 11px;border-radius:20px;letter-spacing:.02em}
+.time{font-size:13.5px;font-weight:700;color:#fff;background:var(--blue);
+  padding:4px 12px;border-radius:5px;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.idx{font-size:13.5px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}
+.boothno{font-size:12.5px;font-weight:600;color:var(--muted);border:1px solid var(--line);
+  padding:3px 9px;border-radius:4px}
+.pick{font-size:14px;color:var(--body);background:var(--soft);border-radius:6px;
+  padding:12px 15px;margin-top:10px}
+.pick b{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);
+  letter-spacing:.06em;margin-right:8px}
+.booth .summary{font-size:16.5px;line-height:1.65;color:var(--body);margin-bottom:6px}
+.booth .url{font-size:13.5px;color:var(--muted);word-break:break-all}
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:20px;
+  padding-top:20px;border-top:1px solid var(--line)}
+.blocks.stack{grid-template-columns:1fr;gap:20px}
+.block > b{display:block;font-size:14px;font-weight:700;color:var(--ink);
+  letter-spacing:.04em;margin-bottom:12px}
+.block ul{list-style:none;font-size:16px;line-height:1.75}
+.block li{padding-left:15px;position:relative;margin-bottom:10px;color:var(--body)}
+.block li b{color:var(--ink);font-weight:700}
+.block li::before{content:"";position:absolute;left:0;top:11px;width:4px;height:4px;
+  border-radius:50%;background:var(--muted)}
+.block.hl{background:var(--soft);margin:-10px -12px;padding:18px 20px;border-radius:8px}
+.block.hl li::before{background:var(--blue)}
+.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+.shots:has(figure:only-child){grid-template-columns:minmax(0,600px)}
+.shots figure{margin:0}
+.shots figure.wide{grid-column:1/-1}
+.shots figure.wide img{width:auto;max-width:100%}
+.shots img{width:100%;border-radius:6px;border:1px solid var(--line);display:block}
+.shots figcaption,.cap{font-size:13px;line-height:1.6;color:var(--muted);margin-top:9px}
+
+/* ── 비교 표 ───────────────────────────── */
+table.cmp{width:100%;border-collapse:collapse;font-size:15px;margin-top:20px}
+table.cmp th{background:var(--soft);color:var(--ink);font-weight:700;font-size:13.5px;
+  text-align:left;padding:12px 14px;border-bottom:1.5px solid var(--line)}
+table.cmp th:first-child{width:90px}
+table.cmp th:not(:first-child){width:calc((100% - 90px)/2)}
+table.cmp td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6}
+table.cmp td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+table.cmp tbody tr:hover{background:rgba(0,102,255,.02)}
+
+/* ── 간단 표 ───────────────────────────── */
+table.brief{width:100%;border-collapse:collapse;font-size:12.5px}
+table.brief th{background:var(--soft);color:var(--ink);font-weight:600;font-size:11.5px;
+  letter-spacing:.04em;text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+table.brief td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+table.brief td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+
+/* ── 트렌드 / 액션 ──────────────────────── */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid var(--line);border-radius:10px;padding:22px;break-inside:avoid}
+.card .n{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.1em}
+.card h5{font-size:17px;font-weight:700;color:var(--ink);margin:9px 0 10px}
+.card p{font-size:15px;line-height:1.7;color:var(--body)}
+.card .case{margin-top:14px;padding-top:11px;border-top:1px dashed var(--line);
+  font-size:13px;color:var(--muted)}
+.card ul{list-style:none;font-size:15px;line-height:1.7}
+.card li{padding-left:13px;position:relative;margin-bottom:9px}
+.card li::before{content:"";position:absolute;left:0;top:10px;width:4px;height:4px;
+  border-radius:50%;background:var(--blue)}
+
+/* ── 갤러리 ─────────────────────────────── */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.gallery figure{margin:0}
+.gallery img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+
+footer{padding:34px 64px 56px;font-size:11.5px;color:var(--muted);
+  display:flex;justify-content:space-between}
+.empty{color:#c2c8d0;font-style:italic}
+
+/* ── 인쇄: A4 가로 ──────────────────────── */
+@page{size:A4 landscape;margin:11mm}
+@media print{
+  body{background:#fff;font-size:10.5px}
+  .page{max-width:none}
+  .cover{padding:60px 0 40px;page-break-after:always}
+  section{padding:24px 0;border:none;page-break-inside:auto}
+  .booth,.card,.gallery figure{page-break-inside:avoid}
+  footer{padding:20px 0}
+  a{color:var(--ink)}
+}
+@media (max-width:820px){
+  .cover,section,footer{padding-left:24px;padding-right:24px}
+  .blocks,.grid3{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <div class="eyebrow">Exhibition Visit Report</div>
+    <h1 id="c-title">2026 에듀테크 코리아 페어</h1>
+    <h2 id="c-sub">참관 보고서</h2>
+    <div class="rule"></div>
+    <div class="meta">
+      <div><b>작성 부서</b><span id="c-org"></span></div>
+      <div><b>작성자</b><span id="c-author"></span></div>
+      <div><b>작성일</b><span id="c-date"></span></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head"><span class="sec-no">01</span><h3>참관 개요</h3></div>
+    <table class="info"><tbody id="overview"></tbody></table>
+  </section>
+
+  <section id="sec-sessions">
+    <div class="sec-head"><span class="sec-no"></span><h3>컨퍼런스 · 부대행사 세션</h3></div>
+    <div id="sessions"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no"></span><h3>부스별 관찰 내용</h3>
+      <span class="desc" id="booth-count"></span></div>
+    <div id="booths"></div>
+  </section>
+
+  <section id="sec-brief">
+    <div class="sec-head"><span class="sec-no"></span><h3>그 외 참관 업체</h3></div>
+    <table class="brief">
+      <thead><tr><th style="width:170px">업체</th><th style="width:38%">전시 내용</th><th>AI 기술 / 메모</th></tr></thead>
+      <tbody id="briefs"></tbody>
+    </table>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no"></span><h3>업계 AI 기술 트렌드</h3></div>
+    <div class="grid3" id="trends"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no"></span><h3>시사점 및 POLY 적용점</h3></div>
+    <div class="grid3" id="actions"></div>
+  </section>
+
+  <section id="sec-gallery">
+    <div class="sec-head"><span class="sec-no">06</span><h3>현장 사진</h3></div>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <footer>
+    <span>2026 에듀테크 코리아 페어 참관 보고서</span>
+    <span>EduPoly · ATLAS본부 AI Product팀</span>
+  </footer>
+</div>
+
+<script src="data/booths.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const has = v => Array.isArray(v) ? v.filter(x => x && String(x).trim()).length > 0 : !!(v && String(v).trim());
+const esc = s => String(s ?? "").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const rich = s => esc(s).replace(/&lt;b&gt;/g, "<b>").replace(/&lt;\/b&gt;/g, "</b>");
+const li = arr => arr.filter(has).map(t => `<li>${rich(t)}</li>`).join("");
+
+/* 표지 + 개요 */
+$("#c-title").textContent = OVERVIEW.title;
+$("#c-sub").textContent   = OVERVIEW.subtitle;
+$("#c-org").textContent   = OVERVIEW.org;
+$("#c-author").textContent= OVERVIEW.author;
+$("#c-date").textContent  = OVERVIEW.reportDate;
+$("#overview").innerHTML = OVERVIEW.rows
+  .map(([k, v]) => `<tr><th>${esc(k)}</th><td>${has(v) ? esc(v) : '<span class="empty">작성 예정</span>'}</td></tr>`)
+  .join("");
+
+/* 부스 카드 */
+const block = (label, arr, hl) => has(arr)
+  ? `<div class="block${hl ? " hl" : ""}"><b>${label}</b><ul>${li(arr)}</ul></div>` : "";
+
+const blocks = (...items) => {
+  const inner = items.join("");
+  return inner ? `<div class="blocks">${inner}</div>` : "";
+};
+
+/* photos 항목은 "경로" 또는 { src, wide, cap } — wide는 한 줄 전체를 차지 */
+const shots = (photos, caption) => {
+  if (!has(photos)) return "";
+  const figs = photos.map(p => {
+    const { src, wide, cap } = typeof p === "string" ? { src: p } : p;
+    return `<figure${wide ? ' class="wide"' : ""}><img src="${esc(src)}" alt="">`
+      + (has(cap) ? `<figcaption>${esc(cap)}</figcaption>` : "") + `</figure>`;
+  }).join("");
+  return `<div class="shots">${figs}</div>`
+    + (has(caption) ? `<p class="cap">${esc(caption)}</p>` : "");
+};
+
+$("#booths").innerHTML = BOOTHS.map((b, i) => `
+  <article class="booth">
+    <div class="booth-head">
+      <span class="idx">${String(i + 1).padStart(2, "0")}</span>
+      <h4>${esc(b.name) || '<span class="empty">업체명</span>'}</h4>
+      ${has(b.tag) ? `<span class="tag">${esc(b.tag)}</span>` : ""}
+      ${has(b.no) ? `<span class="boothno">부스 ${esc(b.no)}번</span>` : ""}
+    </div>
+    ${has(b.pick) ? `<p class="pick"><b>선정 이유</b>${esc(b.pick)}</p>` : ""}
+    ${has(b.summary) ? `<p class="summary">${esc(b.summary)}</p>` : ""}
+    ${has(b.url) ? `<p class="url"><a href="${esc(b.url)}" target="_blank">${esc(b.url)}</a></p>` : ""}
+    ${b.compare ? `<table class="cmp">
+      <thead><tr>${b.compare.head.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead>
+      <tbody>${b.compare.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody>
+    </table>` : ""}
+    ${blocks(
+      block("특징", b.features),
+      block("주요 AI 기술", b.tech),
+      block("시사점 · 적용 아이디어", b.insight, true)
+    ).replace('class="blocks"', 'class="blocks stack"')}
+    ${shots(b.photos, b.photoCaption)}
+  </article>`).join("");
+$("#booth-count").textContent = `총 ${BOOTHS.length}개 부스`;
+
+/* 간단 표 */
+const briefRows = BRIEFS.filter(r => r.some(has));
+if (briefRows.length) {
+  $("#briefs").innerHTML = briefRows
+    .map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("");
+} else {
+  $("#sec-brief").style.display = "none";
+}
+
+/* 세션 */
+if (typeof SESSIONS !== "undefined" && SESSIONS.length) {
+  $("#sessions").innerHTML = SESSIONS.map(s => `
+    <article class="booth">
+      <div class="booth-head">
+        ${has(s.time) ? `<span class="time">${esc(s.time)}</span>` : ""}
+        <h4>${esc(s.title)}</h4>
+      </div>
+      <p class="url">${[s.place, s.speaker].filter(has).map(esc).join(" · ")}</p>
+      ${has(s.summary) ? `<p class="summary" style="margin-top:8px">${esc(s.summary)}</p>` : ""}
+      ${blocks(block("핵심 내용", s.points), block("시사점 · 적용 아이디어", s.insight, true))
+        .replace('class="blocks"', 'class="blocks stack"')}
+      ${shots(s.photos, s.photoCaption)}
+    </article>`).join("");
+} else {
+  $("#sec-sessions").style.display = "none";
+}
+
+/* 트렌드 */
+$("#trends").innerHTML = TRENDS.map((t, i) => `
+  <div class="card">
+    <div class="n">${String(i + 1).padStart(2, "0")}</div>
+    <h5>${esc(t.title)}</h5>
+    <p>${has(t.desc) ? esc(t.desc) : '<span class="empty">내용 작성</span>'}</p>
+    ${has(t.cases) ? `<div class="case">관련 업체 · ${esc(t.cases)}</div>` : ""}
+  </div>`).join("");
+
+/* 적용점 */
+$("#actions").innerHTML = ACTIONS.map((a, i) => `
+  <div class="card">
+    <div class="n">IDEA ${i + 1}</div>
+    <h5>${esc(a.title)}</h5>
+    <ul>${li(a.items) || '<li class="empty">내용 작성</li>'}</ul>
+  </div>`).join("");
+
+/* 갤러리 */
+if (GALLERY.length) {
+  $("#gallery").innerHTML = GALLERY.map(g => `
+    <figure><img src="${esc(g.src)}" alt="">
+      ${has(g.caption) ? `<figcaption>${esc(g.caption)}</figcaption>` : ""}</figure>`).join("");
+} else {
+  $("#sec-gallery").style.display = "none";
+}
+
+/* 섹션 번호 자동 매기기 (숨겨진 섹션은 건너뜀) */
+let n = 0;
+document.querySelectorAll("section").forEach(sec => {
+  if (sec.style.display === "none") return;
+  const el = sec.querySelector(".sec-no");
+  if (el) el.textContent = String(++n).padStart(2, "0");
+});
+</script>
+</body>
+</html>
