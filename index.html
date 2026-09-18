@@ -20,15 +20,16 @@ a:hover{text-decoration:underline}
 /* ── 표지 ───────────────────────────────── */
 .cover{padding:96px 64px 72px;border-bottom:1px solid var(--line)}
 .cover .eyebrow{font-size:12px;letter-spacing:.16em;color:var(--blue);font-weight:700;text-transform:uppercase}
-.cover h1{font-size:40px;line-height:1.25;color:var(--ink);font-weight:800;margin:18px 0 6px;letter-spacing:-.02em}
-.cover h2{font-size:20px;font-weight:500;color:var(--muted)}
-.cover .meta{margin-top:40px;display:flex;gap:40px;font-size:13px;color:var(--body)}
-.cover .meta b{display:block;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.08em;margin-bottom:4px}
+.cover .title-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin:18px 0 6px}
+.cover h1,.cover h2{font-size:40px;line-height:1.25;color:var(--ink);font-weight:800;letter-spacing:-.02em;margin:0}
+.cover .meta{margin-top:40px;display:flex;gap:88px;font-size:16px;color:var(--body)}
+.cover .meta b{display:block;font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.06em;margin-bottom:6px}
+.cover .meta span{font-weight:700;color:var(--ink)}
 .rule{height:3px;width:56px;background:var(--blue);margin:28px 0 0}
 
 /* ── 섹션 ───────────────────────────────── */
 section{padding:56px 64px;border-bottom:1px solid var(--line)}
-.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:28px}
 .sec-no{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.1em}
 .sec-head h3{font-size:25px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
 .sec-head .desc{font-size:13.5px;color:var(--muted);margin-left:auto}
@@ -137,8 +138,10 @@ footer{padding:34px 64px 56px;font-size:11.5px;color:var(--muted);
 
   <header class="cover">
     <div class="eyebrow">Exhibition Visit Report</div>
-    <h1 id="c-title">2026 에듀테크 코리아 페어</h1>
-    <h2 id="c-sub">참관 보고서</h2>
+    <div class="title-line">
+      <h1 id="c-title">2026 에듀테크 코리아 페어</h1>
+      <h2 id="c-sub">참관 보고서</h2>
+    </div>
     <div class="rule"></div>
     <div class="meta">
       <div><b>작성 부서</b><span id="c-org"></span></div>
